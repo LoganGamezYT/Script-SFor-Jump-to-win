@@ -1,0 +1,11 @@
+local player = game.Players.LocalPlayer
+
+repeat task.wait() until player.Character
+
+script.Parent.Text = "Jump Power: "..tostring(player.Character.Humanoid.JumpPower)
+
+player.Character.Humanoid:GetPropertyChangedSignal("JumpPower"):Connect(function()
+	script.Parent.Text = "Jump Power: "..tostring(player.Character.Humanoid.JumpPower)
+end)
+
+--- StarterGUI Screen Gui with Frame and Than TextLable
