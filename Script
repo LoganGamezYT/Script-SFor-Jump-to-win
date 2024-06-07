@@ -1,0 +1,15 @@
+game.Players.PlayerAdded:Connect(function(player)
+	player.CharacterAdded:Connect(function(character)
+		character.Humanoid.UseJumpPower = true
+		character.Humanoid.JumpPower = 0
+	end)
+end)
+
+while task.wait(1) do
+	
+	for _, player in pairs(game.Players:GetPlayers()) do
+		if player.Character then
+			player.Character.Humanoid.JumpPower += 1
+		end
+	end
+end
